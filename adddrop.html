@@ -8,6 +8,7 @@
     <link rel="stylesheet" media="screen" href="css/normalize.css" />
     <link rel="stylesheet" media="screen" href="css/screen.css" />
     <script src="js/scripts.js"></script>
+    <script src="js/myscript.js"></script>
   </head>
   <body>
     <header>
@@ -29,7 +30,7 @@
       </ul>
     </div>
 	<div id="content">
-	  <form name="AddDrop">
+	  <form name="AddDrop" autocomplete="on" onsubmit="return buttonSuccess()">
 	    <h1>Add Or Drop Classes</h1>
 		<h2>Add Using CRN Numbers</h2>
 		<p>Please enter the CRN number of the classes you wish to add and press submit.</p>
@@ -43,10 +44,12 @@
 			<label><input type="text" id="crn6" name="crn6_field" placeholder="CRN #6"></label>
 		  </p>
 		</fieldset>
-		<div id= "button">
-	      <input type="submit" value="Add to Schedule">
-	    </div>
+	  <div id= "button1">
+	    <input type="submit" value="Add to Schedule" onclick="buttonSuccess(); return false">
+	  </div>
+	  </form>
 
+	  <form name="AddDrop2">
 		<h2>Add Using Course Numbers</h2>
 		<p>Please select the course name, number, and section of the class you wish to add and press submit.</p>
 		 <fieldset id= "CourseIndepth">
@@ -71,9 +74,12 @@
 			</select>
 		  </p>
 		</fieldset>
-		<div id= "button2">
-	      <input type="submit" value="Add to Schedule">
-	    </div>
+	  <div id= "button2">
+	    <input type="submit" value="Add to Schedule" onclick="buttonSuccess2()">
+	  </div>
+	  </form>
+
+	  <form name="Drop">
 		<h2>Drop Classes</h2>
 		<p>Use the dropdown menu next to the class if you wish to drop it.</p>
 		 <fieldset id= "Dropping">
@@ -96,9 +102,9 @@
 			</select>
 		  </p>
 		</fieldset>
-		<div id= "button3">
-	      <input type="submit" value="Save changes">
-	    </div>
+	  <div id= "button3">
+	    <input type="submit" value="Save changes" onclick="buttonSuccess3()">
+	  </div>
 	  </form>
 	</div>
     <footer>
